@@ -26,6 +26,10 @@
 │   └── app.py
 ├── nginx/
 │   └── nginx.conf
+├── tests/
+│   ├── conftest.py
+│   ├── test_integration.py
+│   └── requirements.txt
 ├── docker-compose.yml
 └── README.md
 ```
@@ -58,6 +62,28 @@ Hello from Effective Mobile!
 
 ```bash
 curl http://localhost:8080   # должно завершиться ошибкой соединения
+```
+
+## Интеграционные тесты
+
+Тесты поднимают стек через `docker compose`, проверяют поведение системы и останавливают контейнеры после завершения.
+
+Что проверяется:
+
+| Тест | Описание |
+|---|---|
+| `test_nginx_returns_200` | nginx отвечает со статусом HTTP 200 |
+| `test_nginx_returns_correct_body` | тело ответа — `Hello from Effective Mobile!` |
+| `test_nginx_content_type_is_plain_text` | заголовок `Content-Type: text/plain` |
+| `test_backend_not_exposed_on_host` | backend не опубликован на хост-порт |
+
+### Запуск
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install -r tests/requirements.txt
+pytest tests/ -v
 ```
 
 ## Остановить
