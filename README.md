@@ -42,7 +42,11 @@
 
 ## Как запустить
 
+Предварительно убедитесь, что в системе установлены [Docker](https://docs.docker.com/get-docker/) и Docker Compose.
+
 ```bash
+git clone https://github.com/baiv84/effective-mobile-devops-task.git
+cd effective-mobile-devops-task
 docker compose up -d --build
 ```
 
