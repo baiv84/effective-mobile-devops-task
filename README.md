@@ -94,7 +94,7 @@ pip install -r tests/requirements.txt
 pytest tests/ -v
 ```
 
-## Остановить
+## Остановить приложение
 
 ```bash
 docker compose down
