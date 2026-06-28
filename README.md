@@ -40,6 +40,10 @@
 - Nginx (alpine)
 - Docker / Docker Compose
 
+## Демо
+
+Приложение развёрнуто и доступно в интернете: https://app-sibpsa.ru/effmobile/
+
 ## Как запустить
 
 Предварительно убедитесь, что в системе установлены [Docker](https://docs.docker.com/get-docker/) и Docker Compose.
